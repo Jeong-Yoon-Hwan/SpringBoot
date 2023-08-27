@@ -8,4 +8,10 @@
     <select id="getUserById" resultType="com.example.demo.model.User">
         SELECT * FROM users WHERE id = #{id}
     </select>
+    <insert id="insertUser">
+        INSERT INTO users(userName,password) values(#{userName},#{password})
+    </insert>
+    <update id="updateUser">
+        UPDATE users SET password = #{password} WHERE id = #{id}   
+    </update>
 </mapper>

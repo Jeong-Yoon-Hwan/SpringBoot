@@ -16,7 +16,7 @@ public class UserService {
   public UserService(UserMapper userMapper){
     this.userMapper = userMapper;
   }
- 
+
   public List<User> getAllUsers(){
     return userMapper.getAllUsers();
   }
@@ -24,5 +24,17 @@ public class UserService {
   public User getUserById(Long id) {
     return userMapper.getUserById(id);
   } 
+
+  public void insertUser(User user){
+    userMapper.insertUser(user);
+  }
+
+  public void updateuser(Long id, String password){
+    User user = new User();
+    user.setId(id);
+    user.setPassword(password);
+    
+    userMapper.updateUser(user);
+  }
 
 }
