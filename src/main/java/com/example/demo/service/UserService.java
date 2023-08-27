@@ -33,8 +33,13 @@ public class UserService {
     User user = new User();
     user.setId(id);
     user.setPassword(password);
-    
     userMapper.updateUser(user);
   }
+
+  public void deleteUser(Long id){
+    userMapper.deleteUser(id);
+  }
+
+
 
 }
